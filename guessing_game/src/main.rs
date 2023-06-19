@@ -1,7 +1,20 @@
 use rand::Rng;
 use std::{cmp::Ordering, io};
+
 fn main() {
     println!("Guess the number!");
+
+    let x = 5;
+    let y = &x;
+
+    assert_eq!(5, x);
+    assert_eq!(5, *y);
+
+    use std::net::IpAddr;
+
+    let home: Result<IpAddr, _> = "127.0.0".parse();
+
+    println!("{:?}", home);
 
     let secret_number = rand::thread_rng().gen_range(1, 10);
 
